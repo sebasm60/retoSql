@@ -1,0 +1,43 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href='https://bootswatch.com/4/solar/bootstrap.min.css'>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand">Crud MySql</a>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class=" col-md-5 ">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1>Welcome</h1>
+                            <h2>
+                                <%-user%>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="card ">
+                        <div class="card-body ">
+                            <form id="vehiculo " action="/vehiculo " method="post ">
+                                <a type="submit " class="btn btn-success " href="vehiculos">Bd vehiculos</a>
+                            </form>
+                            <form id="vehiculo ">
+                                <a type="submit " class="btn btn-success" href="tipoLinea">Bd tipo de linea </a>
+                            </form>
+                            <form id="vehiculo ">
+                                <a type="submit " class="btn btn-success " href="/tipoMarca">Bd tipo de marca</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+    </html>

@@ -1,0 +1,83 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href='https://bootswatch.com/4/solar/bootstrap.min.css'>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-dark bg-dark">
+            <a href='/dashboard' class="navbar-brand">Home</a>
+        </nav>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-7">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Indice</th>
+                                <th>Id linea</th>
+                                <th>id Marca</th>
+                                <th>Desc Linea</th>
+                                <th>Activo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (data) { %>
+                                <% for (let i = 0; i < data.length; i++) { %>
+                                    <tr>
+                                        <td>
+                                            <%- i %>
+                                        </td>
+                                        <td>
+                                            <%- data[i].id_linea %>
+                                        </td>
+                                        <td>
+                                            <%- data[i].id_marca %>
+                                        </td>
+                                        <td>
+                                            <%- data[i].desc_linea %>
+                                        </td>
+                                        <td>
+                                            <%- data[i].activo %>
+                                        </td>
+                                        <td>
+                                            <a href="/deleteLi/<%- data[i].id_linea %>" class="btn btn-danger">Delete</a>
+                                            <br>
+                                            <br>
+                                            <a href="/updateLi/<%- data[i].id_linea %>" class="btn btn-info">Update</a>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                        <% } %>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4 ml-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/addLi" method="post">
+                                <div class="form-group">
+                                    <input type="text" name="id_linea" placeholder="Id linea" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="id_marca" placeholder="Id marca" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="desc_linea" placeholder="Desc" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="activo" placeholder="Activo" class="form-control" />
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add line</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    </html>
